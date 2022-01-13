@@ -20,6 +20,7 @@ pip3 install -r requirements.txt
 Cowboy WS Server
 
 ```
+mix deps.get
 iex -S mix
 ```
 
