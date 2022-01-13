@@ -76,7 +76,7 @@ FPS = 555.17, websocket send time = 1.8ms
 
 ## Testing Results: Network | Win PC -> MacbookAir M1
 
-* Gig ethernet, direct connection
+- Gig ethernet, direct connection
 
 `python client -> python ws server`
 
@@ -104,9 +104,10 @@ FPS = 58.87, websocket send time = 17.0ms
 FPS = 55.56, websocket send time = 18.0ms
 FPS = 55.54, websocket send time = 18.0ms
 ```
+
 Ethernet utilization ~= 730 Mbps
 
-![](assets\python-ws-server.png)
+![](./assets/python-ws-server.png)
 
 `python client -> cowboy ws server`
 
@@ -124,5 +125,3 @@ FPS = 7.04, websocket send time = 142.0ms
 Ethernet utilization ~= 140 Mbps
 
 ![](./assets/cowboy-ws-server.png)
-
-
