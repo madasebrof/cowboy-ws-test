@@ -1,3 +1,51 @@
+# UPDATE
+
+This is now fixed, see `lib/frame_server/application.ex`.
+
+This is testing streaming 2 MB binary messages over WebSockets.
+
+## Locally on a MacBook Air M1
+
+`python client -> cowboy ws server`
+
+```
+FPS = 1216.45, websocket send time = 0.8ms
+FPS = 1170.94, websocket send time = 0.9ms
+FPS = 1700.85, websocket send time = 0.6ms
+FPS = 1960.87, websocket send time = 0.5ms
+FPS = 1049.10, websocket send time = 1.0ms
+FPS = 1085.76, websocket send time = 0.9ms
+FPS = 1712.66, websocket send time = 0.6ms
+FPS = 1760.83, websocket send time = 0.6ms
+FPS = 1429.06, websocket send time = 0.7ms
+FPS = 1392.53, websocket send time = 0.7ms
+FPS = 1854.25, websocket send time = 0.5ms
+FPS = 1267.16, websocket send time = 0.8ms
+```
+
+(waaaat!)
+
+## Over 10 gig ethernet
+
+`python client -> cowboy ws server`
+
+```
+FPS = 142.89, websocket send time = 7.0ms
+FPS = 166.59, websocket send time = 6.0ms
+FPS = 142.83, websocket send time = 7.0ms
+FPS = 166.78, websocket send time = 6.0ms
+FPS = 142.81, websocket send time = 7.0ms
+FPS = 142.82, websocket send time = 7.0ms
+FPS = 166.73, websocket send time = 6.0ms
+FPS = 27.03, websocket send time = 37.0ms
+FPS = 166.70, websocket send time = 6.0ms
+FPS = 142.86, websocket send time = 7.0ms
+FPS = 142.81, websocket send time = 7.0ms
+FPS = 26.32, websocket send time = 38.0ms
+FPS = 166.62, websocket send time = 6.0ms
+FPS = 142.85, websocket send time = 7.0ms
+```
+
 # FrameServer
 
 Simple test for sending large(ish) files over websockets to a cowboy ws server.

@@ -5,6 +5,9 @@ defmodule FrameServer.Application do
 
   @port 8765
 
+  # should be at least as big as largest binary message!
+  @buf_size 1024 * 1024 * 2
+
   @impl true
   def start(_type, _args) do
     dispatch =
@@ -15,6 +18,11 @@ defmodule FrameServer.Application do
          ]}
       ])
 
-    :cowboy.start_clear(:server, [{:port, @port}], %{:env => %{:dispatch => dispatch}})
+    :cowboy.start_clear(
+      :server,
+      # need to increase recbuf, sndbuf, buffer for larger messages!
+      [{:recbuf, @buf_size}, {:sndbuf, @buf_size}, {:buffer, @buf_size}, {:port, @port}],
+      %{:env => %{:dispatch => dispatch}}
+    )
   end
 end
